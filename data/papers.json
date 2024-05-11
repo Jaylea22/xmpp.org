@@ -1,0 +1,42 @@
+[
+    {
+        "title": "Tokenization of sustainable real estate in Smart Cities - Monetization as basis for construction, authorization and carbon neutralization in CPS",
+        "authors": "P. Waher; K. Araoz; P. Pulgar R.; D. Moström",
+        "year": 2022,
+        "published_in": "IEEE IECON 2022",
+        "pages": "1-6",
+        "doi": "10.1109/IECON49645.2022.9968404",
+        "url": "https://ieeexplore.ieee.org/document/9968404",
+        "abstract": "Tokenization is a new means to monetize assets in new decentralized economies. New types of tokens allow for the tokenization of physical assets and real-world projects. They can also be used to monetize digital assets in Cyber-Physical Systems, as well as provide a decentralized means to authorize access to such devices and systems. This paper describes one such effort, where this new type of tokens acts as the basis for financing the construction of sustainable real estate (smart buildings), as well as provide a means for private investors (owners) and other interested third parties to gain access to revenue, as well as cyber-physical systems and digital twins within the constructed smart buildings, in an interoperable and transparent manner. Inter-operability with underlying systems and equipment is performed using IEEE P1451.99 IoT Harmonization interfaces. Monetization of underlying resources allows for advanced optimization of the process, in accordance with principles defined within Industry 4.0, smart cities, sustainability and quality of life for citizens."
+    },
+    {
+        "title": "IEC 61850 communication and XMPP based design of Virtual Power Plant",
+        "authors": "M. A. Aftab, S. M. S. Hussain, T. S. Ustun, A. Kalam",
+        "year": 2021,
+        "published_in": "31st Australasian Universities Power Engineering Conference (AUPEC)",
+        "pages": "1-5",
+        "doi": "10.1109/AUPEC52110.2021.9597719.",
+        "url": "https://ieeexplore.ieee.org/abstract/document/9597719",
+        "abstract": "Virtual power plant (VPP) is an aggregated cluster of distributed energy resources (DER), controllable loads and distributed storage devices (DESD) in order to appear them as a single larger power plant. Solitarily operating DER units do not have sufficient technical and cost-effective feasibility to participate in system management and market-based activities. However, with the vision of VPP model, power flows can be coordinated among the widely distributed DERs, controllable loads and DESDs optimally through effective energy management (EMS) system. For realizing the vision of VPP model, communication plays a key role since the DERs, DESDs and loads are geographically distantly placed. Having an interoperable and objected oriented communication for VPP, reliability, security and standardization can be ensured. This paper develops eXtensible Message Presence Protocol (XMPP)-based IEC 61850 communication design for VPP. The deployment of XMPP infrastructure in VPP communication environment will be the paradigm shift in power utility communication scenario."
+    },
+    {
+        "title": "Using open source software and open standards for operating robotic telescopes",
+        "authors": "T.-O. Husser and F. V. Hessman",
+        "year": 2019,
+        "published_in": "RMxAA (Serie de Conferencias), 51",
+        "pages": "15-23",
+        "doi": "10.22201/ia.14052059p.2019.51.04",
+        "url": "http://www.astroscu.unam.mx/rmaa/RMxAC..51/PDF/RMxAC..51_articulo06.pdf",
+        "abstract": "The University of Göttingen, the McDonald Observatory of the University of Texas at Austin, and the South African Astronomical Observatory (SAAO) operate two robotic telescopes called MONET at McDonald Observatory in Fort Davis, Texas (MONET/North), and at the SAAO in Sutherland, South Africa (MONET/South). After problems with our original observation control system and some difficulties with another one, we decided to build our own system, initially providing only the minimally required functionality, but allowing for easy extensibility. A decision was made to build on open standards and open source software only, so that we can use existing and well-tested technologies. In this paper we will describe our efforts to implement such an open observation control system using HTTP and XMPP. Furthermore, we will discuss possibilities for connecting multiple telescopes via VOEvents and RTML."
+    },
+    {
+        "title": "IEC 61850 and XMPP Communication Based Energy Management in Microgrids Considering Electric Vehicles",
+        "authors": "M. A. Aftab, S. M. S. Hussain, I. Ali and T. S. Ustun",
+        "year": 2018,
+        "published_in": "IEEE Access, vol. 6",
+        "pages": "35657-35668",
+        "doi": "10.1109/ACCESS.2018.2848591",
+        "url": "https://ieeexplore.ieee.org/document/8394998",
+        "abstract": "Electric vehicles (EVs) can act as flexible resources in grid due to their bidirectional power transfer capabilities. In microgrids, the bidirectional power transfer capability of EVs through proper scheduling can be utilized to improve reliability, security, and quality of supply. Optimal scheduling of EVs is generally managed and controlled through the energy management system of microgrid. Since microgrid energy management (EM)-based scheduling of EVs is data driven, an effective communication between different actors of EM is required. This paper presents a IEC 61850 communication-based EM in microgrids with integrated EVs. Furthermore, augmentation of existing IEC 61850-90-8 logical nodes of EV and its related equipment with new data objects to include information exchanges for discharging operation of EVs have been proposed. Finally, in this paper, XMPP-based communication approach and its mapping to the service models for EM problem has been demonstrated."
+    }
+]

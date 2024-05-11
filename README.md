@@ -1,93 +1,104 @@
-xmpp.org
-========
-[![Build Status](https://travis-ci.org/xsf/xmpp.org.png?branch=master)](https://travis-ci.org/xsf/xmpp.org)
+# xmpp.org
+
+[![Build Website](https://github.com/xsf/xmpp.org/actions/workflows/build-website.yml/badge.svg)](https://github.com/xsf/xmpp.org/actions/workflows/build-website.yml)
 
 Please log any [issues](https://github.com/xsf/xmpp.org/issues/new).
 
-Any editorial questions: [Laura Gill](xmpp:laura.gill@surevine.com) or [Simon Tennant](xmpp:simon@buddycloud.com) can help
+## Contributing new content and updates
 
-Contributing new content and updates
-------------------------------------
- 
 * Fork the [code](https://github.com/xsf/xmpp.org/fork) to your own git repository.
-* Make your changes in `/content/pages` or [directly](https://github.com/xsf/xmpp.org/tree/master/content/pages) in GitHub. 
+* Make your changes in `/content` or [directly via GitHub](https://github.com/xsf/xmpp.org/tree/master/content).
 * When you are happy with your updates, submit a [pull request](https://github.com/xsf/xmpp.org/pulls) describing the changes.
-* **IMPORTANT** :- Before sending a **Pull Request** make sure that your forked repo is in sync with the base repo.
+* **IMPORTANT:** Before sending a **Pull Request** make sure that your forked repo is in sync with the base repo.
 * The updates will be reviewed and merged in.
 
-Communication forum
--------------------
+## Communication forum
 
 Please use [xsf@muc.xmpp.org](xmpp:xsf@muc.xmpp.org?join) for discussions about the site, content, generation etc.
 
-Site generation
----------------
+## Site generation
 
 * Commits to the master branch generate a new build.
-* Builds are visible at https://travis-ci.org/xsf/xmpp.org/builds
-* New content is deployed to [gh-pages branch](https://github.com/xsf/xmpp.org/tree/gh-pages)
-* and visible on http://new.xmpp.org
+* Builds are visible at [Github Actions](https://github.com/xsf/xmpp.org/actions).
+* Changes will be visible on [xmpp.org](https://xmpp.org) after the next update.
 
-## Gentle introduction to Pelican
+### Build instructions
 
-Pelican's [QUICKSTART](http://docs.getpelican.com/en/latest/quickstart.html) page is a good place to learn about the basics of Pelican (installation, project skeleton, development cycle, etc.).
+Clone this repository:
 
-### Installation instructions
 ```bash
 git clone ssh://git@github.com/xsf/xmpp.org.git
-# install Pelican and dependencies
 cd xmpp.org
 ```
-### Requirements
 
-* Pelican 3.3
-* ghp-import
-* Markdown 2.3.1
+Build locally or via Docker:
 
-### Runing the server in development mode
+* [Local (regular) build](#regular-build)
+* [Docker container build](#docker-build)
+
+#### Regular build
+
+To run a development server on your local machine, follow these basic steps.
+You need to have the following dependencies installed:
+
+* Hugo
+* Python >=3.11
+* lua (>=5.2) and lua-expat
+
+The development server will automatically rebuild the page whenever a file is changed:
 
 ```bash
 make serve
 ```
 
-If you want the server to autoreload whenever a file change, you can instead do:
+View at `http://localhost:1313`
+
+#### Docker build
+
+To build and serve the website locally, simply run:
 
 ```bash
-make devserver
+docker build -t xmpp-org --build-arg BASEURL=http://localhost/ --build-arg BUILDFUTURE=--buildFuture .
 ```
-View at `http://localhost:8000`
 
-### Configuration
+It will do the following:
+
+* Build a Docker image with a complete set of dependencies ready.
+* Generate the website from the locally checked out xmpp.org repository (`make publish`). This includes rules from `deploy/xsf.conf`.
+
+For development convenience, you can serve the website locally:
+
+```bash
+docker run -p 80:80 -t -i xmpp-org
+```
+
+View at `http://localhost:80`
+
+## Development
+
+### Repository structure
 
 ```
 <repo>
-  fabfile.py
-  develop_server.sh
-  Makefile
-  README.md
-  pelicanconf.py (development configuration)
-  publishconf.py (production configuration)
-  output
-    <generated files - published to gh-pages branch>
+  public
+    <generated files>
   content
-    pages
-      <website page files>
-  pelican-bootstrap3
+    <website page files>
+  themes
     <website theme>
 ```
 
-### Site generation
+### Introduction to Hugo
 
-To just generate a new version (without starting up a local webserver) just do:
+Hugo’s [quickstart](https://gohugo.io/getting-started/quick-start/) page is a good place to learn about the basics of Hugo (setup, project skeleton, development cycle, etc.).
 
-`make html`
+### Theme development
 
+xmpp.org's theme makes use of:
 
-Theme development
------------------
+* [Bootstrap 5.3](https://getbootstrap.com/docs/5.3)
+* [FontAwesome 6](https://fontawesome.com/v6/docs)
 
-You can modify the theme (layout and styling) in the [xmpp.org-theme](https://github.com/xsf/xmpp.org/tree/master/xmpp.org-theme/sass) directory.
+The theme (layout and styling) can be customized in the [/themes/xmpp.org directory](https://github.com/xsf/xmpp.org/tree/master/themes/xmpp.org).
 
-Make changes to Sass files, *not* compiled CSS.
-
-`npm i` then run `grunt` to compile Sass.
+You can directly modify styles in [themes/xmpp.org/assets/css/style.css](https://github.com/xsf/xmpp.org/blob/master/themes/xmpp.org/assets/css/style.css).

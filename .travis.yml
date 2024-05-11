@@ -1,9 +1,0 @@
-language: python
-cache: apt
-notifications:
-  email: false
-install:
-- pip install pelican ghp-import markdown
-script:
-  - export PYTHONPATH=$PYTHONPATH:/usr/local/lib/python2.7/dist-packages
-  - make html

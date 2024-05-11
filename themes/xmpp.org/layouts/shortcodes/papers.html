@@ -1,0 +1,17 @@
+{{- range .Site.Data.papers -}}
+    <div class="row pb-1">
+        <div class="col-12 shadow-sm p-3 mb-5 rounded">
+            <h5><a href="{{- .url -}}" target="_blank">{{- .title -}}&nbsp;({{- .year -}})</a></h5>
+            <p class="mb-0"><small>{{- .authors -}}</small>
+            {{- if .published_in -}}
+                <small class="text-body-secondary">&nbsp;—&nbsp;{{- .published_in -}}{{- if .pages -}},&nbsp;{{- .pages -}}.{{- end -}}</small>
+                {{- if .doi -}}
+                    <small class="text-body-secondary">&nbsp;DOI:&nbsp;<em>{{- .doi -}}</em></small>
+                {{- end -}}
+            {{- end -}}
+            </p>
+            <p class="mb-0"><small><b>Abstract:</b>&nbsp;{{- (replace .abstract "\n" "<br/>") | safeHTML | truncate 300}}</small></p>
+        </div>
+    </div>
+{{- end -}}
+<hr>

@@ -1,0 +1,517 @@
+html {
+    scroll-padding-top: 4rem;
+}
+h1 {
+    font-weight: 700 !important;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.nav-link {
+    font-family: "Exo 2", sans-serif;
+    font-weight: 400;
+}
+.heading-anchor {
+    visibility: hidden;
+    color:#6c757d;
+    position: absolute;
+    margin-left: 0.3em;
+}
+h2:hover .heading-anchor,
+h3:hover .heading-anchor,
+h4:hover .heading-anchor {
+    visibility: visible;
+}
+p,
+li,
+blockquote {
+    font-family: "Merriweather", serif !important;
+}
+blockquote {
+    background: #f5f5f5;
+    border-left: 10px solid #ccc;
+    margin: 0 0 1rem;
+    padding: 0.5rem 0.5rem 0.5rem 1rem;
+}
+/* remove margin from last paragraph in blockquote */
+blockquote > :last-child { margin-bottom: 0 !important; }
+a {
+    color: #008cba;
+    line-height: inherit;
+    text-decoration: none;
+}
+a:hover,
+a:focus {
+    color: #0078a0;
+}
+a img {
+    border: none;
+}
+p {
+    font-family: inherit;
+    font-size: 1rem;
+    font-weight: normal;
+    line-height: 1.6;
+    margin-bottom: 1.25rem;
+    text-rendering: optimizeLegibility;
+}
+li p {
+    margin-bottom: 0;
+}
+img {
+    display: inline-block;
+    vertical-align: middle;
+    max-width: 100%;
+    height: auto;
+}
+article {
+    margin-bottom: 80px;
+}
+article h1 {
+    margin-bottom: 20px;
+    color: #002b5c;
+}
+article h6 {
+    padding: 10px 0;
+    margin: 20px 0;
+    border-top: 1px solid #eee;
+    border-bottom: 1px solid #eee;
+}
+article p,
+article li {
+    font-size: 16px;
+    line-height: 1.8;
+}
+article h2,
+article h3 {
+    color: #002b5c;
+}
+table {
+    background: #fff;
+    border: solid 1px #ddd;
+    margin-bottom: 1.25rem;
+    table-layout: auto;
+}
+table caption {
+    background: transparent;
+    color: #222;
+    font-size: 1rem;
+    font-weight: bold;
+}
+table thead {
+    background: #f5f5f5;
+}
+table thead tr th,
+table thead tr td {
+    color: #222 !important;
+    font-size: 0.875rem !important;
+    font-weight: bold;
+    padding: 0.5rem 0.625rem 0.625rem !important;
+}
+table tr th,
+table tr td {
+    color: #222 !important;
+    font-size: 0.875rem !important;
+    padding: 0.5625rem 0.625rem !important;
+    text-align: left;
+}
+table tr.even,
+table tr.alt,
+table tr:nth-of-type(even) {
+    background: #f9f9f9;
+}
+table thead tr th,
+table tbody tr th,
+table tbody tr td,
+table tr td {
+    display: table-cell;
+    line-height: 1.125rem;
+}
+
+.navbar-logo {
+    display: inline-block;
+    margin: -5px 5px 0 0;
+    width: 30px;
+}
+.dropdown-item {
+    font-family: "Exo 2", sans-serif;
+}
+.dropdown-item:active {
+    background-color:rgb(35, 67, 90);
+}
+
+.sidebar {
+    padding-top: 130px;
+}
+.sidebar li {
+    font-size: smaller;
+}
+.sidebar h4 {
+    text-transform: capitalize;
+}
+.header-home {
+    background-image: url(/images/london.jpg);
+    width: 100%;
+    background-size: cover;
+    height: 60vh;
+    background-position: center center;
+    position: relative;
+}
+.header-home .hero {
+    position: absolute;
+    bottom: 0;
+    background-color: rgba(0,0,0,0.8);
+    padding: 20px;
+    width: 100%;
+}
+.header-home h1 {
+    color: #fff;
+    text-align: center;
+}
+.header-home h3 {
+    color: rgb(214, 214, 214);
+    text-align: center;
+    padding-bottom: 6px;
+}
+.feature-home p {
+    font-family: "Exo 2", sans-serif !important;
+    font-size: large;
+    line-height: inherit;
+}
+
+.header-internal {
+    text-align: center;
+    padding: 20px;
+    border-bottom: 1px solid #eee;
+}
+.header-internal h1,
+.header-internal h1 a {
+    color: #002b5c;
+}
+.page-content {
+    padding: 40px 0;
+    min-height: 600px;
+}
+.blog-tags {
+    background: #e8f1f9;
+    padding: 0.2rem 0.3rem;
+    margin: 0 0.1rem;
+    border-radius: 0.375rem;
+}
+
+/* Sharing */
+.share-box {
+    padding: 12px;
+    border-bottom: 1px solid #eee;
+}
+ul.share {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+   ul.share li {
+    display: inline-flex;
+    margin-right: 5px;
+}
+   ul.share li:last-of-type {
+    margin-right: 0;
+}
+   ul.share li .fab {
+    display: block;
+    width: 30px;
+    height: 30px;
+    line-height: 30px;
+    font-size: 16px;
+    text-align: center;
+    transition: all 150ms ease-in-out;
+    color: #fff;
+}
+   ul.share li a {
+    background-color: #b0b0b0;
+    display: block;
+    border-radius: 50%;
+    text-decoration: none !important;
+    margin: 0;
+}
+   ul.share li:hover .fab {
+    transform: scale(1.2)
+}
+.mermaid {
+    border-radius: 6px;
+    margin-bottom: 12px;
+}
+
+/* Software list */
+.logo-software {
+    height: 50px;
+    vertical-align: middle;
+    text-align: center;
+    display: inline-block;
+    margin: 0 10px 10px 10px;
+    -webkit-filter: grayscale(80%);
+    filter: grayscale(80%);
+    -webkit-transition: opacity 1.5s, -webkit-filter 1.5s;
+    -moz-transition: opacity 1.5s, -moz-filter 1.5s;
+    transition: opacity 1.5s, filter 1.5s, -webkit-filter 1.5s, moz-filter 1.5s;
+}
+.software-list h2 {
+    margin-bottom: 40px;
+}
+.software-list h5 {
+    color: #777;
+}
+.software-list:hover .logo-software {
+    -webkit-filter: grayscale(0%);
+    filter: grayscale(0%);
+    -webkit-transition: opacity 1.5s, -webkit-filter 1.5s;
+    -moz-transition: opacity 1.5s, -moz-filter 1.5s;
+    transition: opacity 1.5s, filter 1.5s, -webkit-filter 1.5s, -moz-filter 1.5s;
+}
+
+/* Footer: Sponsors, Github link */
+.footer-sponsors {
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+}
+.footer-sponsors ul {
+    padding: 0;
+}
+.footer-sponsors li {
+    list-style: none;
+    display: inline-block;
+    margin: 1.5rem;
+}
+.footer-sponsors img {
+    height: 3.5rem;
+}
+.sponsor-logo {
+    filter: drop-shadow(0px 0px 10px rgba(100, 100, 100, 0.5));
+}
+.footer-github {
+    border-top: 1px solid #eee;
+    padding: 12px;
+    text-align: center;
+}
+.footer-github p {
+    margin-bottom: 0;
+    font-family: "Exo 2", sans-serif !important;
+}
+.footer-github img {
+    height: 25px;
+    display: inline;
+    margin-right: 10px;
+    position: relative;
+    top: -3px;
+}
+.footer-xmpp-logo {
+    width: 150px;
+}
+.footer a {
+    color:#ccc;
+    font-family: "Exo 2", sans-serif;
+}
+
+/* Add sorting icons to extensions table */
+table.sortable th:not(.sorttable_sorted):not(.sorttable_sorted_reverse):not(.sorttable_nosort):after {
+    content: " \25B4\25BE";
+    color: grey;
+}
+
+button[name="show-xep-implementations"] {
+    min-width: 2.5em;
+}
+
+.extensions-block-listing li {
+    font-family: "Exo 2", sans-serif !important;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+.extensions-logos img {
+    height: 100px;
+}
+.offcanvas.offcanvas-end.extensions-offcanvas {
+    width: 100%;
+}
+@media (min-width: 576px) {
+    .offcanvas.offcanvas-end.extensions-offcanvas {
+        width: 70%;
+    }
+}
+@media (min-width: 768px) {
+    .offcanvas.offcanvas-end.extensions-offcanvas {
+        width: 50%;
+    }
+}
+@media (min-width: 992px) {
+    .offcanvas.offcanvas-end.extensions-offcanvas {
+        width: var(--bs-offcanvas-width);
+    }
+}
+
+.abbr {
+    -webkit-text-decoration: underline dotted;
+    text-decoration: underline dotted #6c757d;
+    cursor: help;
+    color: #2a2e31;
+}
+
+/* Software (clients/servers/libraries) list */
+.card:hover {
+    box-shadow: 0 3px 20px 0px rgb(125 125 125 / 12%), 0px 1px 8px rgb(125 125 125 / 6%);
+}
+.software-collapse {
+    transition: none;
+}
+.software-logo-default {
+    filter: opacity(0.3);
+}
+.software-logo {
+    max-width: 150px;
+    width: 100%;
+}
+.software-logo-small {
+    max-width: 50px;
+    width: 100%;
+}
+.software-platforms {
+    background-color: #fff;
+    color: #515d64;
+}
+.software-details-xeps {
+    display: block;
+    border: none;
+    width: 100%;
+    height: 1500px;
+}
+.header-packages h1 {
+    font-size: 1.8rem;
+    text-align: left;
+    margin-bottom: 0px;
+}
+.compliance-data-list span {
+    font-family: "Exo 2", sans-serif !important;
+}
+.compliance-badge-core {
+    background-color: #487095;
+}
+.compliance-badge-advanced {
+    background-color: #6e3778;
+}
+
+.software-filter p {
+    font-family: "Exo 2", sans-serif !important;
+}
+.select-options-wrapper {
+    overflow: auto;
+    max-height: 200px;
+}
+.select-dropdown-container {
+    position: absolute;
+    z-index: 1000;
+}
+.select-options-list {
+    margin: 12px;
+}
+.xep-select {
+    cursor: default;
+}
+
+#comparison-dropdown {
+    max-height: 300px;
+    overflow-y: auto;
+}
+#comparison-table tr td:not(:first-child) {
+    text-align: center;
+}
+
+
+/* Dark theme */
+@media (prefers-color-scheme: dark) {
+	label {
+		color: #acb6bd;
+	}
+	h1, h2, h3, h4, h5, h6 {
+		color: #95c0d9;
+	}
+    .header-internal h1, .header-internal h1 a {
+        color: #95c0d9;
+    }
+    .header-internal {
+        border-bottom: 1px solid #435760;
+    }
+    .blog-tags {
+        background: #103a5e;
+    }
+    article h1,
+    article h2,
+    article h3 {
+        color: #95c0d9;
+    }
+    ul.share li a {
+        background-color: #3b5160;
+    }
+    a {
+        color: #27b7e6;
+    }
+    blockquote {
+        background: #2e353a;
+        border-left: 10px solid #56707a;
+        color: #b9cbdb;
+    }
+	table {
+		background-color: #333;
+		border: 1px solid #5a5a5a !important;
+	}
+    table thead {
+        background: #2c2c2c;
+    }
+	table > tbody > tr > td,
+    table > thead > tr > th {
+		background-color: #21242a;
+        color: #b3b3b3 !important;
+	}
+    table tr:nth-of-type(even) {
+        background: #2b2b2b;
+    }
+    .header-home {
+        background-image: url(/images/london-dark.jpg);
+    }
+    .header-home .hero {
+        background-color: rgba(0,0,0,.7);
+    }
+    .footer-sponsors {
+        background-color: #2e3439;
+        border: 1px solid #4c4c4c;
+    }
+    .footer-github {
+        border-top: 1px solid #3d3f41;
+    }
+    .software-list {
+        background-color: #1b252a;
+    }
+    .software-platforms {
+        background-color: #32373c;
+        color: #a4b1b9;
+    }
+    .card {
+        background-color: #161920;
+    }
+    .card-header {
+        background-color: #161920;
+    }
+    .card > ul > li {
+        background-color: #1f232c;
+        color: #e3e3e3;
+    }
+    .mermaid {
+        background-color: #6e7882;
+    }
+}

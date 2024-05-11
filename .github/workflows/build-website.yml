@@ -1,0 +1,78 @@
+name: Build Website
+
+on:
+  push:
+    branches:
+    - master
+  pull_request:
+    branches:
+    - master
+
+  # Allows to run this workflow manually from the Actions tab
+  workflow_dispatch:
+
+  # Build website every day at 4:00 UTC
+  schedule:
+    - cron: "0 4 * * *"
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    env:
+      ARCHIVE: xmpp-org-master.tar.gz
+
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install Python packages
+        run: pip install -r tools/requirements.txt
+
+      - name: Set up Lua
+        uses: leafo/gh-actions-lua@v10
+        with:
+          luaVersion: "5.4"
+
+      - name: Set up LuaRocks
+        uses: leafo/gh-actions-luarocks@v4
+
+      - name: Install Lua packages
+        run: luarocks install luaexpat
+
+      - name: Software list linting
+        run: |
+          python tools/lint_software_list.py software.json
+
+      - name: Prepare XEP list
+        run: python tools/prepare_xep_list.py
+
+      - name: Prepare RFC list
+        run: python tools/prepare_rfc_list.py
+
+      - name: Prepare software list
+        run: python tools/prepare_software_list.py
+
+      - name: Generate/add compliance data
+        run: python tools/prepare_compliance.py
+
+      - name: Set up Hugo
+        uses: peaceiris/actions-hugo@v2
+        with:
+          hugo-version: '0.123.0'
+
+      - name: Build website
+        run: hugo
+
+      - name: Create build archive
+        run: tar -czf ${{ env.ARCHIVE }} "./public"
+
+      - name: Upload build artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: xmpp.org-master
+          path: ${{ env.ARCHIVE }}
